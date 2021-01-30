@@ -17,7 +17,9 @@ function setup() {
 
   ground = new Ground(400,780,800,10);
 
-
+  for (var i = 0; i <=width; i = i + 100) {
+    div.push(new Division(i, height-divH/2,10,divH));
+  }
   
 }
 
@@ -25,10 +27,8 @@ function draw() {
   background(0); 
   Engine.update(engine);
   ground.display();
-  
-  for (var i = 0; i <=width; i = i + 100) {
-    div.push(new Division(i, height-divH/2,10,divH));
-  }
+  div.display();
+
 
   drawSprites();
 }
